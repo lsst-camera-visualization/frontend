@@ -10,11 +10,11 @@ import store from "../store";
 
 const defaultImage = (process.env.NODE_ENV !== "production") ?
     "http://localhost:8080/static/images/imageE2V_untrimmed.fits" :
-    "http://lsst.cs.illinois.edu/static/images/imageE2V_untrimmed.fits";
+    "http://localhost:8080/static/images/sampleRaft.fits";
 
 const defaultImageTrimmed = (process.env.NODE_ENV !== "production") ?
     "http://localhost:8080/static/images/imageE2V.fits" :
-    "http://lsst.cs.illinois.edu/static/images/imageE2V.fits";
+    "http://localhost:8080/static/images/sampleRaft.fits";
 
 
 let imageRepo = null;
@@ -40,6 +40,9 @@ export class Viewer {
         this.image = image;
         this.original_image_url = defaultImageTrimmed;
         this.layers = [];
+
+        console.log(image);
+        console.log(defaultImageTrimmed);
 
         this.cursorPoint = { x: 0, y: 0 };
 

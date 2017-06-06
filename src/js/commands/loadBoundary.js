@@ -48,6 +48,7 @@ export default viewer => {
 
         if (data.type in parsers) {
             // Parse the regions
+            console.log(data);
             const regions = parsers[data.type](data.data);
             store.dispatch(setBoundaryRegions(viewer.id, regions));
         }
